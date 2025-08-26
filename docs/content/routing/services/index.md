@@ -119,6 +119,10 @@ Servers declare a single instance of your program.
 
 The `url` option point to a specific instance.
 
+!!! info ""
+    If your server is listening on a HTTP/1 Unix socket, you can use `unix+http:/path/to/socket`.
+    If your server is listening on a non-encrypted HTTP/2 Unix socket (commonly refered as H2C), you can use `unix+h2c:/path/to/socket`.
+
 ??? example "A Service with One Server -- Using the [File Provider](../../providers/file.md)"
 
     ```yaml tab="YAML"

@@ -369,6 +369,12 @@ func (m *Manager) getLoadBalancerServiceHandler(ctx context.Context, serviceName
 			return nil, fmt.Errorf("error parsing server URL %s: %w", server.URL, err)
 		}
 
+		// Handle Unix socket URLs
+		if strings.HasPrefix(target.Scheme, "unix+") {
+			target.Host = target.Path
+			target.Path = ""
+		}
+
 		logger.Debug().Int(logs.ServerIndex, i).Str("URL", server.URL).
 			Msg("Creating server")
 
