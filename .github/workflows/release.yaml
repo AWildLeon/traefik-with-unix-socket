@@ -15,11 +15,11 @@ env:
 jobs:
 
   build-webui:
-    if: github.ref_type == 'tag' && github.repository == 'traefik/traefik'
+    if: github.ref_type == 'tag' && github.repository == 'AWildLeon/traefik-with-unix-socket'
     uses: ./.github/workflows/template-webui.yaml
 
   build:
-    if: github.ref_type == 'tag' && github.repository == 'traefik/traefik'
+    if: github.ref_type == 'tag' && github.repository == 'AWildLeon/traefik-with-unix-socket'
     runs-on: ubuntu-latest
 
     strategy:
@@ -81,7 +81,7 @@ jobs:
           retention-days: 1
 
   release:
-    if: github.ref_type == 'tag' && github.repository == 'traefik/traefik'
+    if: github.ref_type == 'tag' && github.repository == 'AWildLeon/traefik-with-unix-socket'
     runs-on: ubuntu-latest
 
     needs:
@@ -130,7 +130,7 @@ jobs:
             --exclude dist .
           
           chown -R "$(id -u)":"$(id -g)" dist/
-          gh release create ${VERSION} ./dist/**/traefik*.{zip,tar.gz} ./dist/traefik*.{tar.gz,txt} --repo traefik/traefik --title ${VERSION} --notes ${VERSION} --latest=false
+          gh release create ${VERSION} ./dist/**/traefik*.{zip,tar.gz} ./dist/traefik*.{tar.gz,txt} --repo AWildLeon/traefik-with-unix-socket --title ${VERSION} --notes ${VERSION} --latest=false
           
           ./script/deploy.sh
 
