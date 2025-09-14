@@ -1,4 +1,9 @@
+⚠️ **Word of Warning**
+This is **completely unofficial**. Updates? Maybe. Maybe not.
+PRs that smell like issues will be closed on sight. Support? None.
+I’m just nice enough to share this with the world, but remember: this repo exists **only** for my own infra. If it works for me, that’s all that matters.
 
+---
 <p align="center">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="docs/content/assets/img/traefik.logo-dark.png">
